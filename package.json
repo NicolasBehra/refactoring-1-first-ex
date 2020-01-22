@@ -25,7 +25,8 @@
     "clean": "rm -rf dist/",
     "build": "npm run tsc",
     "tsc": "tsc",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "test-w": "mocha --watch -r ts-node/register src/**/*.spec.ts --watch-extensions ts"
   },
   "repository": {
     "type": "git",
