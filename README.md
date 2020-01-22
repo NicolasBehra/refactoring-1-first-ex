@@ -1,4 +1,11 @@
-# refactoring-1-first-ex
+# REFACTORING by Martin C. Fowler
 
 ## Run
-> node src/main.js
+> npm start
+(behind: it runs the command "npm run clean-build-launch")
+
+## Build
+> npm run build
+
+## Clean
+> npm run clean

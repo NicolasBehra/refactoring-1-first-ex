@@ -1,0 +1,36 @@
+{
+  "name": "refactoring-1-first-ex",
+  "version": "1.0.0",
+  "description": "Refactoring - Martin C. Fowler - 1 - First example ",
+  "main": "src/app.ts",
+  "dependencies": {
+    "core-util-is": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run clean-build-launch",
+    "launch": "node dist/app.js",
+    "clean-build-launch": "npm run clean-build && npm run launch",
+    "clean-build": "rm -rf dist/ && npm run tsc",
+    "clean": "rm -rf dist/",
+    "build": "npm run tsc",
+    "tsc": "tsc",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasBehra/refactoring-1-first-ex.git"
+  },
+  "keywords": [
+    "refactoring",
+    "unit test",
+    "tdd",
+    "test"
+  ],
+  "author": "Nicolas BEHRA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasBehra/refactoring-1-first-ex/issues"
+  },
+  "homepage": "https://github.com/NicolasBehra/refactoring-1-first-ex#readme"
+}
