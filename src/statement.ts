@@ -1,4 +1,3 @@
-
 export function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
@@ -8,11 +7,12 @@ export function statement(invoice, plays) {
     currency: "USD",
     minimumFractionDigits: 2
   }).format;
-  
+
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
+
+    const play = playFor(perf, plays);
     let thisAmount = amountFor(perf, play);
-    
+
     // add volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
     // add extra credit for every ten comedy attendees
@@ -49,4 +49,8 @@ function amountFor(aPerformance, play): number {
       throw new Error(`unknown type: ${play.type}`);
   }
   return result;
+}
+
+function playFor(aPerformance, plays) {
+  return plays[aPerformance.playID];
 }
