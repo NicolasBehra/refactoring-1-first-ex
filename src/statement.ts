@@ -6,11 +6,11 @@ export function statement(invoice, plays) {
       perf.audience
     } seats)\n`;
   }
-  result += `Amount owed is ${usd(applSauce())}\n`;
+  result += `Amount owed is ${usd(totalAmount())}\n`;
   result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
 
-  function applSauce() {
+  function totalAmount() {
     let totalAmount = 0;
     for (let perf of invoice.performances) {
       totalAmount += amountFor(perf);
