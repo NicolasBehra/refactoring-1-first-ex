@@ -1,10 +1,7 @@
 export function statement(invoice, plays) {
   let result = `Statement for ${invoice.customer}\n`;
   
-  let totalAmount = 0;
-  for (let perf of invoice.performances) {
-    totalAmount += amountFor(perf);
-  }
+  let totalAmount = applSauce();
   for (let perf of invoice.performances) {
     // print line for this order
     result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${
@@ -14,6 +11,14 @@ export function statement(invoice, plays) {
   result += `Amount owed is ${usd(totalAmount)}\n`;
   result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
+
+  function applSauce() {
+    let totalAmount = 0;
+    for (let perf of invoice.performances) {
+      totalAmount += amountFor(perf);
+    }
+    return totalAmount;
+  }
 
   function totalVolumeCredits() {
     let volumeCredits = 0;
